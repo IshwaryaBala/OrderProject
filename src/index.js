@@ -8,16 +8,16 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "assets/scss/OrderProject-dashboard.scss";
 
 import AdminLayout from "layouts/Admin.js";
-import ClientLayout from "layouts/Client.js";
+// import ClientLayout from "layouts/Client.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" render={(props) => <ClientLayout {...props} />} />
-      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Redirect from="/" to="/user/index" />
+      <Route path="/" render={(props) => <AdminLayout {...props} />} />
+      {/* <Route path="/admin" render={(props) => <AdminLayout {...props} />} /> */}
+      <Redirect from="/" to="/admin/index" />
     </Switch>
   </BrowserRouter>
 );

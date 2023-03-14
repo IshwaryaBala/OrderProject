@@ -22,7 +22,7 @@ const Admin = (props) => {
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/auth") {
+      if (prop.layout === "/admin") {
         return (
           <Route
             path={prop.layout + prop.path}
