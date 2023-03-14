@@ -116,7 +116,7 @@ const Sidebar = (props) => {
         <div className="pt-5" style={{ display: "flex", alignItems: "center" }}>
           <div style={{ flex: 1, backgroundColor: "#EDEDED", height: "1px" }} />
       
-          <p style={{ margin: "0 10px", color:'#7E7E7E', fontSize:'12px', fontFamily:'Manrope', fontWeight:'600' }}>REQUEST TYPE</p>
+          <p style={{ margin: "0 10px", color:'#7E7E7E', fontSize:'12px', fontFamily:'Manrope', fontWeight:'600' }}>ADMIN TOOLS</p>
       
           <div style={{ flex: 1, backgroundColor: "#EDEDED", height: "1px" }} />
       </div>

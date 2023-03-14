@@ -17,7 +17,7 @@ root.render(
     <Switch>
       <Route path="/" render={(props) => <ClientLayout {...props} />} />
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Redirect from="/" to="/user/index" />
+      <Redirect from="/" to="/admin/index" />
     </Switch>
   </BrowserRouter>
 );
