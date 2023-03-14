@@ -18,58 +18,46 @@
 import Index from "views/Index.js";
 
 
-import { Box1, Setting4, SmsTracking, Cd, Tree } from "iconsax-react";
-import SystemConfig from "views/System/SystemConfig";
+import {Box1, Setting4 } from "iconsax-react";
+import SystemConfig from "views/Admin/SystemConfig/SystemConfig";
+import OrderManagement from "views/Admin/OrderManagement/OrderManagement";
 
 var routes = [
   {
-    path: "/index",
+    path: "/ordermanagement",
     name: "Order Management",
-    component: Index,
+    component: OrderManagement,
     layout: "/admin",
     icon: <Box1/>
   },
   {
-    path: "/scan",
+    path: "/systemconfig",
     name: "System Config",
     component: SystemConfig,
     layout: "/admin",
-    icon: <Setting4  variant="Outline"/>
+    icon: <Setting4 variant="Outline"/>
   },
   // {
   //   path: "/electronic",
   //   name: "Electronic S and S",
   //   component: Electronic,
   //   layout: "/admin",
-  //   icon: <SmsTracking variant="Outline"/>
+  //   // icon: <SmsTracking variant="Outline"/>
   // },
   // {
   //   path: "/usb",
   //   name: "USB / CD",
   //   component: USBCD,
-  //   layout: "/admin",
+  //   layout: "/client",
   //   icon: <Cd variant="Outline"/>
   // },
   // {
   //   path: "/chicago",
   //   name: "Chicago - Tree Towns",
   //   component: ChicagoTreeTown,
-  //   layout: "/admin",
-  //   icon: <Tree color="#000000" variant="Outline"/>
+  //   layout: "/client",
+  //   icon: <Tree variant="Outline"/>
   // },
-  // {
-  //   path: "/login",
-  //   name: "Login",
-  //   icon: "ni ni-key-25 text-info",
-  //   component: Login,
-  //   layout: "/auth"
-  // },
-  // {
-  //   path: "/register",
-  //   name: "Register",
-  //   icon: "ni ni-circle-08 text-pink",
-  //   component: Register,
-  //   layout: "/auth"
-  // }
+  
 ];
 export default routes;

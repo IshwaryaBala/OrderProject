@@ -27,7 +27,7 @@ const AdminNavbar = (props) => {
             className="h4 mb-0 p-2 pt-3 pl-4 head d-none d-lg-inline-block"
             
           >
-          Admin Tools - <span style={{color:'#000000'}}>Order Management</span>
+            Admin Tools - <span style={{color:'#000000'}}>{props.brandText} </span>
           </Nav>
           
           

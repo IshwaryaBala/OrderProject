@@ -9,7 +9,6 @@ import ClientFooter from "components/Footers/ClientFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
-import AdminNavbar from "components/Navbars/AdminNavbar";
 
 const Admin = (props) => {
   const mainContent = React.useRef(null);
@@ -23,7 +22,7 @@ const Admin = (props) => {
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
+      if (prop.layout === "/client") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -48,25 +47,26 @@ const Admin = (props) => {
     }
     return "Brand";
   };
+
   return (
     <>
       <Sidebar
         {...props}
         routes={routes}
         logo={{
-          innerLink: "/admin/index",
+          innerLink: "/client/index",
           imgSrc: require("../assets/img/brand/favicon.png"),
           imgAlt: "..."
         }} 
       />
       <div className="main-content" ref={mainContent}>
-        <AdminNavbar
+        <ClientNavbar
           {...props}
           brandText={getBrandText(props.location.pathname)}
         />
         <Switch>
           {getRoutes(routes)}
-          <Redirect from="*" to="/admin/index" />
+          <Redirect from="*" to="/client/index" />
         </Switch>
         <Container fluid>
           <ClientFooter />
