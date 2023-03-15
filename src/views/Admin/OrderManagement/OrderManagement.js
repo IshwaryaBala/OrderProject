@@ -5,6 +5,8 @@ import { Spin, Checkbox, Input, DatePicker,Table,Button, Popover,TimePicker, Upl
 // import Select from "react-select";
 import { Line, Bar } from "react-chartjs-2";
 // reactstrap components
+
+
 import {
 
   Card,
@@ -29,11 +31,13 @@ import {
 } from "variables/charts.js";
 import { Notepad2, Clock, CalendarCircle, Trash, DocumentText ,Magicpen, Receipt1,TickCircle ,SmsTracking, CloseCircle} from "iconsax-react";
 import Header from "components/Headers/Header.js";
+import DeleteOrderPopUp from "views/examples/DeleteOrderPopUp";
 
 const OrderManagement = (props) => {
   const [activeNav, setActiveNav] = useState(1);
   const [chartExample1Data, setChartExample1Data] = useState("data1");
   const [open, setOpen] = useState(false);
+  const [DeletePop, setDeletePop] = useState(false);
   const Option = Select.Option;
 
   const handleok = () =>{
@@ -42,6 +46,13 @@ const OrderManagement = (props) => {
   const handleCancel = () => {
     setOpen(false);
   }
+  const handleDeletePopOk = () => {
+    setDeletePop(false);
+  }
+  const handleDeletePopCancel = () => {
+    setDeletePop(false);
+  }
+
   function handleChange(value) {
     console.log(`selected ${value}`);
   }
@@ -147,9 +158,41 @@ const columns = [
           <Magicpen size="16" color="#264B5D"/>
           </Col>
           <Col sm="1">
-          <Trash size="16" color="#264B5D"/>
+          <button style={{border:"none"}}
+          onClick={() => setDeletePop(true)}
+          >
+          <Trash size="16" color="#264B5D"/></button>
           </Col>
-          
+          <Modal
+                  // title="Print"
+                  centered
+                  open={DeletePop}
+                  onOk={handleDeletePopOk}
+                  onCancel={handleDeletePopCancel}
+                  closable={false}
+                  footer={[
+                    <Row className="p-4 " style={{display:'flex'}}>
+                    <div className="ml-4" >
+                      <button style={{ textAlign:"center", height:"43px", width: "152px", Radius:"8px", padding:"12px, 16px, 12px, 16px",
+                       gap:"8px", background:"#FFFFFF",border:" 1px solid #EDEDED"}} className="PopUpKeyText" onClick={handleDeletePopCancel}>Cancel</button>
+                    </div>
+
+                    <div>
+                      <Button classname="ml-5px .PopUpContinue" style={{ textAlign:"center", height:"43px", width: "152px", background: "#264B5D"}} key="submit" onClick={handleDeletePopCancel}>Delete</Button>
+                    </div>
+                  </Row>
+                  ]}
+
+                  height ={"353px"}
+                  width={"384px"}   
+                  left= {"528px"}
+                  top= {"334px"}
+
+                >
+                  <DeleteOrderPopUp/>
+                  </Modal>
+
+
         </Row>
         <Row className="mt-1">
           <Col sm="1">
